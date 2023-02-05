@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header><h1 style="text-align: center;">Minesweeper Game</h1></header>
+
+    <div class="game-table">
+        <table>
+            <tbody>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+                <tr class="row">
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                    <td class="cell" onclick="checkClickedCell(event)"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container-message hide">
+        <p id="message"></p>
+    </div>
+
+    <div id="new-game-container" class="new-game-popup hide">
+        <div id="result-text"></div>
+        <button id="new-game-button" onclick="startNewGame()">New Game</button>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
