@@ -11,46 +11,50 @@ let rows = 10;
 let cols = 10;
 let placedBombs = [];
 
-function disableAllCells() {
-    cellRef.forEach((cell) => (cell.disabled = true));
-    newGamePopup.classList.remove("hide");
-}
-
-function enableAllCells() {
-    cellRef.forEach((cell) => {
-        cell.disabled = false;
-        cell.innerText = "";
-    });
-    newGamePopup.classList.add("hide");
-    message.innerText = "";
-    background.style.background = "white";
+function btnState(status) {
+    if (status === 1) {
+        cellRef.forEach((cell) => (cell.disabled = true));
+    } else {
+        cellRef.forEach((cell) => {
+            cell.disabled = false;
+            cell.innerText = "";
+        });
+    }
 }
 
 function startNewGame() {
+    newGamePopup.classList.add("hide");
+    message.innerText = "";
+    background.style.background = "white";
     background.classList.remove("blur-background");
     board.classList.remove("blur-background");
     background.classList.add("hide");
-    enableAllCells();
+    btnState(0);
     noOpenCells = 0;
-    for (let row = 0; row < rows; ++row) {
-        placedBombs[row] = [];
-      for (let col = 0; col < cols; ++col) {
-        placedBombs[row][col] = 0;
-      }
-    }
     scatterMines();
 }
 
+function setResultText(result) {
+    resultText.innerHTML = `<p>${result}</p>`;
+}
+
 function endGame() {
+    newGamePopup.classList.remove("hide");
     background.classList.add("blur-background");
     board.classList.add("blur-background");
-    disableAllCells();
+    btnState(1);
     if (noOpenCells === 71) {
-        resultText.innerHTML = "<p>YOU WON!!!</p>";
+        setResultText("YOU WON!!!");
     } else {
-        resultText.innerHTML = "<p>YOU LOST!!!</p>";
+        setResultText("YOU LOST!!!");
     }
     return;
+}
+
+function setUpdateDisplay(click, clickedCellVal, text, color) {
+    click.innerText = clickedCellVal;
+    message.innerText = text;
+    background.style.background = color;
 }
 
 function checkClickedCell(event) {
@@ -58,14 +62,10 @@ function checkClickedCell(event) {
     let rowIndex = clickedCell.parentNode.rowIndex;
     let cellIndex = clickedCell.cellIndex;
     if (placedBombs[rowIndex][cellIndex] === 0) {
-        clickedCell.innerText = "0";
-        message.innerText = "You're luky! This is a safe cell!";
-        background.style.background = "green";
+        setUpdateDisplay(clickedCell, "0", "You're luky! This is a safe cell!", "green");
         ++noOpenCells;
     } else {
-        clickedCell.innerText = "💣";
-        message.innerText = "!!!GAME OVER!!! You detonated the mine!";
-        background.style.background = "red";
+        setUpdateDisplay(clickedCell, "💣", "!!!GAME OVER!!! You detonated the mine!", "red");
         endGame();
     }
     background.classList.remove("hide");
