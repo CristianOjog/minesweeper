@@ -3,7 +3,6 @@ const newGamePopup = document.getElementById("new-game-container");
 const newGameButton = document.getElementById("new-game-button");
 const resultText = document.getElementById("result-text");
 const background = document.querySelector(".container-message");
-const cellRef = document.querySelectorAll(".cell");
 const board = document.querySelector(".game-table");
 
 let noOpenCells = 0;
@@ -12,6 +11,7 @@ let cols = 10;
 let placedBombs = [];
 
 function btnState(status) {
+    const cellRef = document.querySelectorAll(".cell");
     if (status === 1) {
         cellRef.forEach((cell) => (cell.disabled = true));
     } else {
@@ -94,6 +94,20 @@ function scatterMines() {
     }
 }
 
+function createTable() {
+    const tableBody = document.getElementById("game-table-body");
+    let tableRowCells = "";
+    for (let i = 0; i < rows - 1; ++i) {
+        tableRowCells += "<tr class='row'>";
+        for (let j = 0; j < cols - 1; ++j) {
+            tableRowCells += "<td class='cell' onclick='checkClickedCell(event)'></td>";
+        }
+        tableRowCells += "</tr>";
+    }
+    tableBody.innerHTML = tableRowCells;
+}
+
 window.onload = function() {
     scatterMines();
+    createTable();
 };
